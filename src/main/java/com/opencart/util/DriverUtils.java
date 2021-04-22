@@ -4,6 +4,7 @@ import com.opencart.driver.DriverRepository;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DriverUtils {
 
@@ -21,5 +22,10 @@ public class DriverUtils {
 
     private JavascriptExecutor getJSExecutor() {
         return (JavascriptExecutor) webDriver;
+    }
+
+    public void clickAcceptOnPopUpWindow()
+    {
+        webDriver.switchTo().alert().accept();
     }
 }
