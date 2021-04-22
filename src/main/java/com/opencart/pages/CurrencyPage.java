@@ -28,14 +28,17 @@ public class CurrencyPage extends BasePage {
     @FindBy (xpath = ".//thead//a[contains(@href, 'modified')]")
     private WebElement lastUpdatedButton;
 
-    @FindBy (xpath = ".//tbody//following-sibling::tr[last() - 1]//input[@type = 'checkbox']")
+    @FindBy (xpath = ".//tbody//tr[position() = last() - 1]//input[@type = 'checkbox']")
     private WebElement inputCheckboxForRow;
 
-    @FindBy (xpath = ".//tbody//following-sibling::tr[last() - 1]//a[@data-toggle = 'tooltip']")
+    @FindBy (xpath = ".//tbody//tr[position() = last() - 1]//a[@data-toggle = 'tooltip']")
     private WebElement editCurrencyButton;
 
-    @FindBy (xpath = ".//tbody//following-sibling::tr[last() - 1]//following-sibling::td[last() - 2]")
+    @FindBy (xpath = ".//tbody//tr[position() = last() - 1]//td[position() = last() - 2]")
     private WebElement currencyValue;
+
+    @FindBy (xpath = ".//tbody//tr[position()= last() - 1]//td[position() = 2]")
+    private WebElement currencyTitle;
 
     @FindBy (css = "tbody tr")
     private List<WebElement> tableCurrencies;

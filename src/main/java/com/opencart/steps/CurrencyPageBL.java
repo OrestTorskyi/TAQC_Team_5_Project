@@ -69,6 +69,10 @@ public class CurrencyPageBL {
         return Double.parseDouble(currencyPage.getCurrencyValue().getText());
     }
 
+    public String getCurrencyTitle() {
+        return currencyPage.getCurrencyTitle().getText();
+    }
+
     public void verifyDeletingCurrency() {
         String expectedMessage = "Success: You have modified currencies!";
         String actualResult = currencyPage.getSuccessChangesMessage().getText();

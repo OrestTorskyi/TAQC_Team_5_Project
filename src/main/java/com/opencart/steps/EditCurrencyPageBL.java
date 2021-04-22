@@ -28,4 +28,12 @@ public class EditCurrencyPageBL extends AddEditBasePageBL {
 
         return new CurrencyPageBL();
     }
+
+    public CurrencyPageBL changeStatusOfCurrencyForEnabled() {
+        clickOnCurrencyStatusPopUpMenu();
+        clickOnCurrencyStatus(CurrencyStatus.ENABLED);
+        clickOnConfirmCurrencyButton();
+
+        return new CurrencyPageBL();
+    }
 }
