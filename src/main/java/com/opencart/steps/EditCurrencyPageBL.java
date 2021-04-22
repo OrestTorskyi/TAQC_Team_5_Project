@@ -2,8 +2,6 @@ package com.opencart.steps;
 
 import com.opencart.datamodel.CurrencyModel;
 import com.opencart.enums.CurrencyStatus;
-import com.opencart.pages.AddEditCurrencyPage;
-import com.opencart.pages.CurrencyPage;
 import com.opencart.repository.CurrencyModelRepository;
 
 public class EditCurrencyPageBL extends AddEditBasePageBL {
@@ -12,7 +10,6 @@ public class EditCurrencyPageBL extends AddEditBasePageBL {
         super();
     }
 
-    //type - AddNewCurrencyPageBL ?
     public CurrencyPageBL changeValueOfCurrency() {
         CurrencyModel currencyModel = CurrencyModelRepository.getCurrencyModel();
         inputCurrencyValue(currencyModel.getCurrencyValue());

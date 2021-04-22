@@ -7,33 +7,28 @@ public class LoginAdminPageBL {
 
     LoginAdminPage loginAdminPage;
 
-    public LoginAdminPageBL()
-    {
+    public LoginAdminPageBL() {
         loginAdminPage = new LoginAdminPage();
     }
 
-    public MainAdminPageBL loginToAdminAccount()
-    {
+    public MainAdminPageBL loginToAdminAccount() {
         inputAdminUsername(AdminDataLogin.ADMIN);
         inputAdminPassword(AdminDataLogin.ADMIN);
         clickOnConfirmLoginButton();
         return new MainAdminPageBL();
     }
 
-    private void inputAdminUsername(AdminDataLogin adminData)
-    {
+    private void inputAdminUsername(AdminDataLogin adminData) {
         loginAdminPage.getUsername().clear();
         loginAdminPage.getUsername().sendKeys(adminData.getLogin());
     }
 
-    private void inputAdminPassword(AdminDataLogin adminData)
-    {
+    private void inputAdminPassword(AdminDataLogin adminData) {
         loginAdminPage.getUserPassword().clear();
         loginAdminPage.getUserPassword().sendKeys(adminData.getPassword());
     }
 
-    private void clickOnConfirmLoginButton()
-    {
+    private void clickOnConfirmLoginButton() {
         loginAdminPage.getLoginButton().click();
     }
 }

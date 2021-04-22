@@ -13,8 +13,6 @@ public class LoginAdminPage extends BasePage {
     @FindBy(id = "input-password")
     private WebElement userPassword;
 
-
     @FindBy(xpath = ".//button[@type = 'submit']")
     private WebElement loginButton;
-
 }

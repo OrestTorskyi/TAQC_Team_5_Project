@@ -75,5 +75,4 @@ public class RegisterPageBL {
         String expectedMessage = "Your Account Has Been Created!";
         Assert.assertEquals(successRegisterPage.getSuccessTitle().getText(), expectedMessage, "Incorrect page title");
     }
-
 }

@@ -6,6 +6,7 @@ public enum AdminDataLogin {
 
     private String password;
     private String login;
+
     private AdminDataLogin(String login,String password) {
         this.password = password;
         this.login = login;
@@ -20,5 +21,4 @@ public enum AdminDataLogin {
     {
         return login;
     }
-
 }

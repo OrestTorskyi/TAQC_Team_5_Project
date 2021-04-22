@@ -13,6 +13,6 @@ public class BasePage {
     public BasePage() {
         webDriver = DriverRepository.DRIVERS.get();
         webDriverWait = new WebDriverWait(webDriver, 300);
-        PageFactory.initElements(webDriver,this);
+        PageFactory.initElements(webDriver, this);
     }
 }

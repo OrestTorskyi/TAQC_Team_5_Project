@@ -2,12 +2,10 @@ package com.opencart.steps;
 
 import com.opencart.pages.CurrencyPage;
 import com.opencart.util.DriverUtils;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import java.util.List;
-
 public class CurrencyPageBL {
+
     private CurrencyPage currencyPage;
 
     public CurrencyPageBL() {
@@ -52,9 +50,7 @@ public class CurrencyPageBL {
         currencyPage.getEditCurrencyButton().click();
     }
 
-    public void clickOnRefreshCurrencyButton() {
-        currencyPage.getRefreshCurrencyButton().click();
-    }
+    public void clickOnRefreshCurrencyButton() { currencyPage.getRefreshCurrencyButton().click(); }
 
     public int getSizeOfCurrencyElements() {
         return currencyPage.getTableCurrencies().size();
@@ -69,9 +65,7 @@ public class CurrencyPageBL {
         return Double.parseDouble(currencyPage.getCurrencyValue().getText());
     }
 
-    public String getCurrencyTitle() {
-        return currencyPage.getCurrencyTitle().getText();
-    }
+    public String getCurrencyTitle() { return currencyPage.getCurrencyTitle().getText(); }
 
     public void verifyDeletingCurrency() {
         String expectedMessage = "Success: You have modified currencies!";
@@ -79,7 +73,6 @@ public class CurrencyPageBL {
         actualResult = actualResult.replaceAll("[×]", "").trim();
         Assert.assertEquals(actualResult, expectedMessage, "Incorrect message!");
     }
-
 
     public void verifyAddingNewCurrency() {
         String expectedMessage = "Success: You have modified currencies!";
@@ -96,7 +89,6 @@ public class CurrencyPageBL {
         Assert.assertTrue(resultValue == initialValue - 1, "Incorrect values!");
     }
 
-
     public void verifyEditingCurrency() {
         String expectedMessage = "Success: You have modified currencies!";
         String actualResult = currencyPage.getSuccessChangesMessage().getText();
@@ -107,5 +99,4 @@ public class CurrencyPageBL {
     public void verifyEditingCurrency(double initialValue, double resultValue) {
         Assert.assertNotEquals(initialValue, resultValue);
     }
-
 }

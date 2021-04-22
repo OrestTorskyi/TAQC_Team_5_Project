@@ -39,6 +39,4 @@ public class AddEditCurrencyPage extends BasePage {
     public WebElement getCurrencyStatus(CurrencyStatus currencyStatus) {
         return webDriver.findElement(By.xpath(".//option[@value = '" + currencyStatus.getValue() + "']"));
     }
-
-
 }

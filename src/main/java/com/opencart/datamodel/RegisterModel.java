@@ -5,7 +5,6 @@ import lombok.Getter;
 @Getter
 @Builder
 public class RegisterModel {
-
     private String firstName;
     private String lastName;
     private String email;

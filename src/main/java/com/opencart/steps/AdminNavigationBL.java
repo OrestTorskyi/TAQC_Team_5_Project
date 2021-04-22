@@ -2,7 +2,6 @@ package com.opencart.steps;
 
 import com.opencart.pages.AdminNavigation;
 import com.opencart.pages.CurrencyPage;
-import com.opencart.util.DriverUtils;
 
 public class AdminNavigationBL {
 
@@ -36,9 +35,4 @@ public class AdminNavigationBL {
     {
         adminNavigation.getCurrencyMenu().click();
     }
-
-
-
-
-
 }

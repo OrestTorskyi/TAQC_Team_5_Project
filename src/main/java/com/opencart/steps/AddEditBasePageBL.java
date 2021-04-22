@@ -2,7 +2,6 @@ package com.opencart.steps;
 
 import com.opencart.enums.CurrencyStatus;
 import com.opencart.pages.AddEditCurrencyPage;
-import com.opencart.pages.CurrencyPage;
 
 public abstract class AddEditBasePageBL {
 

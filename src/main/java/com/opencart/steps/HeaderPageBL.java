@@ -3,7 +3,6 @@ package com.opencart.steps;
 import com.opencart.pages.HeaderPage;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.util.List;
 
 public class HeaderPageBL {
@@ -50,5 +49,4 @@ public class HeaderPageBL {
         }
         return isInList;
     }
-
 }

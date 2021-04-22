@@ -8,10 +8,8 @@ public class EditCurrencyStatusTestByMessage extends BaseTest {
 
     @Test
     public void editCurrencyStatus() {
-
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
-
         CurrencyPageBL editCurrency = loginAdminPageBL.loginToAdminAccount()
                 .getAdminNavigation()
                 .getToCurrencyPage()
