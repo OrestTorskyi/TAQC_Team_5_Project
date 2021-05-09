@@ -9,9 +9,9 @@ public class CheckCurrencyStatusInShopTests extends BaseTest {
     public void checkCurrencyIsDisabledTest() {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
-        MainAdminPageBL mainAdminPageBL = loginAdminPageBL.loginToAdminAccount();
-        AdminNavigationBL adminNavigationBL = mainAdminPageBL.getAdminNavigation();
-        CurrencyPageBL currencyPageBL = adminNavigationBL.getToCurrencyPage();
+        CurrencyPageBL currencyPageBL = loginAdminPageBL
+                .loginToAdminAccount()
+                .getCurrencyPage();
         currencyPageBL.sortCurrencyByLastUpdateFromOldest();
         String disabledCurrencyTitle = currencyPageBL.getCurrencyTitle();
         EditCurrencyPageBL editCurrencyPageBL = currencyPageBL.clickEditCurrencyButton();
@@ -28,9 +28,9 @@ public class CheckCurrencyStatusInShopTests extends BaseTest {
     public void checkCurrencyIsEnabledTest() {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
-        MainAdminPageBL mainAdminPageBL = loginAdminPageBL.loginToAdminAccount();
-        AdminNavigationBL adminNavigationBL = mainAdminPageBL.getAdminNavigation();
-        CurrencyPageBL currencyPageBL = adminNavigationBL.getToCurrencyPage();
+        CurrencyPageBL currencyPageBL = loginAdminPageBL
+                .loginToAdminAccount()
+                .getCurrencyPage();
         currencyPageBL.sortCurrencyByLastUpdateFromOldest();
         String disabledCurrencyTitle = currencyPageBL.getCurrencyTitle();
         EditCurrencyPageBL editCurrencyPageBL = currencyPageBL.clickEditCurrencyButton();

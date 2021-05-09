@@ -3,7 +3,7 @@ package com.opencart.steps;
 import com.opencart.pages.AdminNavigation;
 import com.opencart.pages.CurrencyPage;
 
-public class AdminNavigationBL {
+public abstract class AdminNavigationBL {
 
     private AdminNavigation adminNavigation;
     private CurrencyPage currencyPage;

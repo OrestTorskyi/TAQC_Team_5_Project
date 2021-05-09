@@ -9,9 +9,9 @@ public class AddNewCurrencyTests extends BaseTest {
     public void addNewCurrencyTestByCountingElements() {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
-        MainAdminPageBL mainAdminPageBL = loginAdminPageBL.loginToAdminAccount();
-        AdminNavigationBL adminNavigationBL = mainAdminPageBL.getAdminNavigation();
-        CurrencyPageBL currencyPageBL = adminNavigationBL.getToCurrencyPage();
+        CurrencyPageBL currencyPageBL = loginAdminPageBL
+                .loginToAdminAccount()
+                .getCurrencyPage();
         int getInitialCountOfElementsInTable = currencyPageBL.getSizeOfCurrencyElements();
         AddNewCurrencyPageBL addNewCurrencyPageBL = currencyPageBL.clickAddNewCurrencyButton();
         CurrencyPageBL currencyPageBLResult = addNewCurrencyPageBL.addNewCurrency();
@@ -24,8 +24,7 @@ public class AddNewCurrencyTests extends BaseTest {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
         CurrencyPageBL currencyPage = loginAdminPageBL.loginToAdminAccount()
-                .getAdminNavigation()
-                .getToCurrencyPage()
+                .getCurrencyPage()
                 .clickAddNewCurrencyButton()
                 .addNewCurrency();
         currencyPage.verifyAddingNewCurrency();

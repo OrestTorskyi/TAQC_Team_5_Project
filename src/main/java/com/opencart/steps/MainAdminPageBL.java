@@ -1,8 +1,8 @@
 package com.opencart.steps;
 
-public class MainAdminPageBL {
+public class MainAdminPageBL extends AdminNavigationBL {
 
-    public AdminNavigationBL getAdminNavigation() {
-        return new AdminNavigationBL();
+    public CurrencyPageBL getCurrencyPage() {
+        return new MainAdminPageBL().getToCurrencyPage();
     }
 }

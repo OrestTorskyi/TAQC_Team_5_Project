@@ -10,8 +10,7 @@ public class EditCurrencyTests extends BaseTest {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
         CurrencyPageBL editCurrency = loginAdminPageBL.loginToAdminAccount()
-                .getAdminNavigation()
-                .getToCurrencyPage()
+                .getCurrencyPage()
                 .clickEditCurrencyButton()
                 .changeStatusOfCurrencyForDisabled();
         editCurrency.verifyEditingCurrency();
@@ -21,9 +20,9 @@ public class EditCurrencyTests extends BaseTest {
     public void editCurrencyValueTestByComparingValues() {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
-        MainAdminPageBL mainAdminPageBL = loginAdminPageBL.loginToAdminAccount();
-        AdminNavigationBL adminNavigationBL = mainAdminPageBL.getAdminNavigation();
-        CurrencyPageBL currencyPageBL = adminNavigationBL.getToCurrencyPage();
+        CurrencyPageBL currencyPageBL = loginAdminPageBL
+                .loginToAdminAccount()
+                .getCurrencyPage();
         currencyPageBL.sortCurrencyByLastUpdateFromOldest();
         double getInitialValueOfCurrencyInTable = currencyPageBL.getCurrencyValue();
         EditCurrencyPageBL editCurrencyPageBL = currencyPageBL.clickEditCurrencyButton();
@@ -38,8 +37,7 @@ public class EditCurrencyTests extends BaseTest {
         new Navigation().navigateToUrl(URLs.ADMIN_URL.getUrl());
         LoginAdminPageBL loginAdminPageBL = new LoginAdminPageBL();
         CurrencyPageBL editCurrency = loginAdminPageBL.loginToAdminAccount()
-                .getAdminNavigation()
-                .getToCurrencyPage()
+                .getCurrencyPage()
                 .clickEditCurrencyButton()
                 .changeValueOfCurrency();
         editCurrency.verifyEditingCurrency();
