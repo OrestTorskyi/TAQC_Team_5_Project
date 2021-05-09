@@ -28,17 +28,15 @@ public class HeaderPageBL {
         return this;
     }
 
-    public HeaderPageBL verifyCurrencyDisabled(String currencyTitle) {
-        Assert.assertFalse(currencyInList(currencyTitle));
-        return this;
+    public void verifyCurrencyDisabled(String currencyTitle) {
+        Assert.assertFalse(isCurrencyInList(currencyTitle), "Error in checking if currency disabled!");
     }
 
-    public HeaderPageBL verifyCurrencyEnabled(String currencyTitle) {
-        Assert.assertTrue(currencyInList(currencyTitle));
-        return this;
+    public void verifyCurrencyEnabled(String currencyTitle) {
+        Assert.assertTrue(isCurrencyInList(currencyTitle), "Error in checking if currency enabled!");
     }
 
-    private boolean currencyInList(String currencyTitle) {
+    private boolean isCurrencyInList(String currencyTitle) {
         List<WebElement> currencies = headerPage.getEnabledCurrenciesList();
         boolean isInList = true;
         for (WebElement currency : currencies) {

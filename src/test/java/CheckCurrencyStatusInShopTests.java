@@ -20,8 +20,8 @@ public class CheckCurrencyStatusInShopTests extends BaseTest {
         new Navigation().navigateToUrl(URLs.BASE_URL.getUrl());
         MainPageBL mainPageBL = new MainPageBL();
         HeaderPageBL headerPageBL = mainPageBL.getHeaderPageBL()
-                .clickOnCurrencyDropdownButton()
-                .verifyCurrencyDisabled(disabledCurrencyTitle);
+                .clickOnCurrencyDropdownButton();
+        headerPageBL.verifyCurrencyDisabled(disabledCurrencyTitle);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class CheckCurrencyStatusInShopTests extends BaseTest {
         new Navigation().navigateToUrl(URLs.BASE_URL.getUrl());
         MainPageBL mainPageBL = new MainPageBL();
         HeaderPageBL headerPageBL = mainPageBL.getHeaderPageBL()
-                .clickOnCurrencyDropdownButton()
-                .verifyCurrencyEnabled(disabledCurrencyTitle);
+                .clickOnCurrencyDropdownButton();
+        headerPageBL.verifyCurrencyEnabled(disabledCurrencyTitle);
     }
 }
