@@ -45,7 +45,9 @@ public class HeaderPageBL {
             if (currency.getText().contains(currencyTitle)) {
                 isInList = true;
                 break;
-            } else isInList = false;
+            } else {
+                isInList = false;
+            }
         }
         return isInList;
     }

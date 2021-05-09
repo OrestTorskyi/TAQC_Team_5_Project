@@ -1,6 +1,7 @@
 package com.opencart.pages;
 
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
@@ -26,9 +27,6 @@ public class CurrencyPage extends BasePage {
     @FindBy (xpath = ".//thead//a[contains(@href, 'modified')]")
     private WebElement lastUpdatedButton;
 
-    @FindBy (xpath = ".//tbody//tr[position() = last() - 1]//input[@type = 'checkbox']")
-    private WebElement inputCheckboxForRow;
-
     @FindBy (xpath = ".//tbody//tr[position() = last() - 1]//a[@data-toggle = 'tooltip']")
     private WebElement editCurrencyButton;
 
@@ -40,4 +38,8 @@ public class CurrencyPage extends BasePage {
 
     @FindBy (css = "tbody tr")
     private List<WebElement> tableCurrencies;
+
+    public WebElement getInputCheckBoxOfElement(String currencyTitle){
+        return webDriver.findElement(By.xpath(".//td[contains(text(), '" + currencyTitle + "')]/preceding-sibling::td/input"));
+    }
 }

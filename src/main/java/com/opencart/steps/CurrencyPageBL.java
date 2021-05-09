@@ -12,20 +12,19 @@ public class CurrencyPageBL {
         currencyPage = new CurrencyPage();
     }
 
-    public AddNewCurrencyPageBL getToAddingNewCurrency() {
+    public AddNewCurrencyPageBL clickAddNewCurrencyButton() {
         clickOnAddNewCurrencyButton();
         return new AddNewCurrencyPageBL();
     }
 
-    public CurrencyPageBL deleteCurrency() {
-        sortCurrencyByLastUpdateFromOldest();
-        clickOnInputCheckbox();
+    public CurrencyPageBL deleteCurrency(String currencyTitle) {
+        clickOnInputCheckboxOfElement(currencyTitle);
         clickOnDeleteCurrencyButton();
         new DriverUtils().clickAcceptOnPopUpWindow();
         return new CurrencyPageBL();
     }
 
-    public EditCurrencyPageBL getToEditCurrencyPage() {
+    public EditCurrencyPageBL clickEditCurrencyButton() {
         clickOnEditCurrencyButton();
         return new EditCurrencyPageBL();
     }
@@ -42,8 +41,8 @@ public class CurrencyPageBL {
         currencyPage.getLastUpdatedButton().click();
     }
 
-    private void clickOnInputCheckbox() {
-        new DriverUtils().clickOnElementJS(currencyPage.getInputCheckboxForRow());
+    private void clickOnInputCheckboxOfElement(String currencyTitle) {
+        new DriverUtils().clickOnElementJS(currencyPage.getInputCheckBoxOfElement(currencyTitle));
     }
 
     private void clickOnEditCurrencyButton() {
@@ -97,6 +96,6 @@ public class CurrencyPageBL {
     }
 
     public void verifyEditingCurrency(double initialValue, double resultValue) {
-        Assert.assertNotEquals(initialValue, resultValue);
+        Assert.assertNotEquals(initialValue, resultValue, "Error in comparing values!");
     }
 }

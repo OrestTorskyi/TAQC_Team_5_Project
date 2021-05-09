@@ -11,7 +11,7 @@ public class AdminNavigation extends BasePage {
     @FindBy(id = "menu-system")
     private WebElement systemMenu;
 
-    @FindBy(xpath = ".//ul[@id = 'collapse7']//a[contains(@href,'#collapse7-2')]")
+    @FindBy(xpath = ".//li[@id = 'menu-system']//*[contains(text(), 'Localisation')]")
     private WebElement localizationMenu;
 
     @FindBy(xpath = ".//*[contains(@href, 'currency')]")
