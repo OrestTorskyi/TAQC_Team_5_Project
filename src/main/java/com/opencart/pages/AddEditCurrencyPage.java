@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class AddEditCurrencyPage extends BasePage {
+public class AddEditCurrencyPage extends AdminNavigation {
 
     @FindBy(id = "input-title")
     private WebElement currencyTitleInput;

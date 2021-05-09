@@ -3,14 +3,11 @@ package com.opencart.steps;
 import com.opencart.enums.CurrencyStatus;
 import com.opencart.pages.AddEditCurrencyPage;
 
-public abstract class AddEditBasePageBL {
+public abstract class AddEditBasePageBL extends AdminNavigationBL {
 
     private AddEditCurrencyPage addEditCurrencyPage;
 
-    protected AddEditBasePageBL()
-    {
-        addEditCurrencyPage = new AddEditCurrencyPage();
-    }
+    protected AddEditBasePageBL() { addEditCurrencyPage = new AddEditCurrencyPage(); }
 
     protected void inputCurrencyTitle(String title) {
         addEditCurrencyPage.getCurrencyTitleInput().clear();
