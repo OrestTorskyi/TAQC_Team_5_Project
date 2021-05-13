@@ -8,7 +8,6 @@ public class RegisterModelRepository {
     private RegisterModelRepository() {
     }
 
-
     public static RegisterModel getRegisterModel() {
         String password = RandomStringUtils.randomAlphabetic(7);
         return RegisterModel.builder()

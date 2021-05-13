@@ -9,17 +9,19 @@ public class DriverUtils {
 
     private WebDriver webDriver;
 
-    public DriverUtils()
-    {
+    public DriverUtils() {
         webDriver = DriverRepository.DRIVERS.get();
     }
 
-    public void clickOnElementJS(WebElement webElement)
-    {
+    public void clickOnElementJS(WebElement webElement) {
         getJSExecutor().executeScript("arguments[0].click();", webElement);
     }
 
     private JavascriptExecutor getJSExecutor() {
         return (JavascriptExecutor) webDriver;
+    }
+
+    public void clickAcceptOnPopUpWindow() {
+        webDriver.switchTo().alert().accept();
     }
 }

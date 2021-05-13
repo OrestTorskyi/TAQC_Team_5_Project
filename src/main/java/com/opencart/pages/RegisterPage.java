@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
 public class RegisterPage extends BasePage {
+
     @FindBy(id = "input-firstname")
     private WebElement firstNameInput;
 
