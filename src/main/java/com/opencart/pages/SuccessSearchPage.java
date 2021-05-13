@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class SuccessSearchPage extends BasePage {
 
-    @FindBy(xpath = ".//*[contains(@href, 'sub_category=true')]")
+    @FindBy(xpath = "//*[@id='content']/h2")
     private WebElement successSearch;
 
     public WebElement getSuccessSearch() {

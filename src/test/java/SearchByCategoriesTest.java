@@ -19,7 +19,7 @@ public class SearchByCategoriesTest extends BaseTest {
     }
 
     @Test
-    public void searchProductsByCategoriesWitnInvalidParameters(){
+    public void searchProductsByCategoriesWithInvalidParameters(){
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
         SearchPageBL searchPageBL = mainPageBL.getHeaderPage()

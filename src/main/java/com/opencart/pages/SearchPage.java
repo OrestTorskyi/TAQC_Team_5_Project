@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import org.apache.bcel.generic.Select;
+import org.openqa.selenium.support.ui.Select;
 
 public class SearchPage extends BasePage {
 
@@ -30,10 +30,8 @@ public class SearchPage extends BasePage {
         return keywordsInput;
     }
 
-    public WebElement getChooseCategory() {
-        WebElement category = driver.findElement(By.className("form-control"));
-        category.selectByVisibleText("Mac");
-        return chooseCategory;
+    public Select getChooseCategory() {
+        return new Select(driver.findElement(By.name("category_id")));
     }
 
     public WebElement getSearchInDescriptions() {

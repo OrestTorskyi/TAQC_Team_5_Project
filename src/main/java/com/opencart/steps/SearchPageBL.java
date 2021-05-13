@@ -89,7 +89,7 @@ public class SearchPageBL {
     //Search by Categories
     private void clickOnChooseCategory() {
 
-        searchPage.getChooseCategory().selectByVisibleText();
+        searchPage.getChooseCategory().selectByValue("27");
     }
 
     private void clickDescriptionCheckbox() {
@@ -103,19 +103,22 @@ public class SearchPageBL {
     }
 
     //Start search
-    public void clickOnStartSearchButton() {
+    public SearchPageBL clickOnStartSearchButton() {
 
         searchPage.getStartSearchButton().click();
+        return new SearchPageBL();
     }
 
     public void verifyUserSearching() {
-        String expectedMessage = "iMac";
+        String expectedMessage = "Products meeting the search criteria";
+        successSearchPage = new SuccessSearchPage();
         Assert.assertEquals(successSearchPage.getSuccessSearch().getText(),
                 expectedMessage, "Incorrect page title");
     }
 
-    public void notVerifyUserSearching(){
+    public void notVerifyUserSearching() {
         String expectedMessage = "There is no product that matches the search criteria.";
+        failSearchPage = new FailSearchPage();
         Assert.assertEquals(failSearchPage.getFailSearch().getText(),
                 expectedMessage, "Incorrect page title");
     }
